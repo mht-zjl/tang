@@ -1,0 +1,223 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "first/welcome-1.html?t=1"
+  },
+  "logoInfo": {
+    "title": "病例管理系统",
+    "image": "images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "首页",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self"
+        },
+		{
+		  "title": "患者信息管理",
+		  "href": "",
+		  "icon": "fa fa-wheelchair",
+		  "target": "_self",
+		  "child": [
+		    {
+		      "title": "患者信息录入",
+		      "href": "patient/Enter-Info.html",
+		      "icon": "fa fa-list-alt",
+		      "target": "_self"
+		    },
+		    {
+		      "title": "患者信息编辑",
+		      "href": "patient/search-patient.html",
+		      "icon": "fa fa-navicon",
+		      "target": "_self"
+		    }
+		  ]
+		},
+		{
+		  "title": "病历记录",
+		  "href": "",
+		  "icon": "fa fa-calendar",
+		  "target": "_self",
+		  "child": [
+		    {
+		      "title": "病历创建",
+		      "href": "medical record/create.html",
+		      "icon": "fa fa-file-o",
+		      "target": "_self"
+		    },
+		    {
+		      "title": "病历查看",
+		      "href": "medical record/check-record.html",
+		      "icon": "fa fa-search-plus",
+		      "target": "_self"
+		    },
+			{
+			  "title": "病历归档",
+			  "href": "medical record/archive.html",
+			  "icon": "fa fa-check-square-o",
+			  "target": "_self"
+			}
+		  ]
+		},
+		{
+		  "title": "诊断与治疗",
+		  "href": "",
+		  "icon": "fa fa-stethoscope",
+		  "target": "_self",
+		  "child": [
+		    {
+		      "title": "诊断录入",
+		      "href": "diagnosis/firstly.html",
+		      "icon": "fa fa-pencil",
+		      "target": "_self"
+		    },
+		    {
+		      "title": "治疗方案制定",
+		      "href": "diagnosis/make.html",
+		      "icon": "fa fa-pencil-square",
+		      "target": "_self"
+		    },
+			{
+			  "title": "治疗过程记录",
+			  "href": "diagnosis/record.html",
+			  "icon": "fa fa-pencil-square-o",
+			  "target": "_self"
+			},
+			{
+			  "title": "治疗效果评估",
+			  "href": "diagnosis/assess.html",
+			  "icon": "fa fa-navicon",
+			  "target": "_self"
+			}
+		  ]
+		},
+		{
+		  "title": "检查检验",
+		  "href": "",
+		  "icon": "fa fa-list-alt",
+		  "target": "_self",
+		  "child": [
+		    {
+		      "title": "检查检验申请",
+		      "href": "check/apply.html",
+		      "icon": "fa fa-envelope",
+		      "target": "_self"
+		    },
+			{
+			  "title": "检查检验申请审核",
+			  "href": "check/step-1.html",
+			  "icon": "fa fa-circle-o-notch",
+			  "target": "_self"
+			},
+			{
+			  "title": "查看已审核列表",
+			  "href": "check/list.html",
+			  "icon": "fa fa-list-ul",
+			  "target": "_self"
+			}
+		  ]
+		},
+		{
+		  "title": "药品管理",
+		  "href": "",
+		  "icon": "fa fa-medkit",
+		  "target": "_self",
+		  "child": [
+		    {
+		      "title": "药品信息管理",
+		      "href": "medical/findmedical.html",
+		      "icon": "fa fa-file-text",
+		      "target": "_self"
+		    },
+			{
+			  "title": "药品发放申请",
+			  "href": "medical/giveapply.html",
+			  "icon": "fa fa-envelope-o",
+			  "target": "_self"
+			},
+			{
+			  "title": "药品发放审核",
+			  "href": "medical/medical-step-1.html",
+			  "icon": "fa fa-circle-o-notch",
+			  "target": "_self"
+			},
+			{
+			  "title": "药品发放列表",
+			  "href": "medical/givelist.html",
+			  "icon": "fa fa-list",
+			  "target": "_self"
+			}
+		  ]
+		},
+		{
+		  "title": "医护人员管理",
+		  "href": "",
+		  "icon": "fa fa-user-md",
+		  "target": "_self",
+		  "child": [
+		    {
+		      "title": "增加医护人员",
+		      "href": "medical-personnel/staff-info-1.html",
+		      "icon": "fa fa-list-alt",
+		      "target": "_self"
+		    },
+		    {
+		     "title": "医护人员编辑",
+		      "href": "medical-personnel/stafflist.html",
+		      "icon": "fa fa-navicon",
+		      "target": "_self"
+		    }
+		  ]
+		},
+		{
+		  "title": "系统管理",
+		  "href": "",
+		  "icon": "fa fa-cogs",
+		  "target": "_self",
+		  "child": [
+		    {
+		      "title": "账号管理",
+		      "href": "",
+		      "icon": "fa fa-list-alt",
+		      "target": "_self",
+			  "child":[
+				  {
+					  "title": "第三方账号绑定",
+					  "href": "system/bind.html",
+					  "icon": "fa fa-lock",
+					  "target": "_self"
+				  },
+				  {
+					  "title": "修改密码",
+					  "href": "system/change-password.html",
+					  "icon": "fa fa-key",
+					  "target": "_self"
+				  }
+			  ]
+		    },
+		    {
+		     "title": "系统设置",
+		      "href": "system/setting.html",
+		      "icon": "fa fa-cog",
+		      "target": "_self"
+		    },
+			{
+			 "title": "问题反馈",
+			  "href": "system/question.html",
+			  "icon": "fa fa-navicon",
+			  "target": "_self"
+			}
+		  ]
+		}
+      ]
+    }
+  ]
+}
