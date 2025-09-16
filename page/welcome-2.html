@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+	<style>
+		.QA{
+			background-color: #9b191b;
+			border-radius: 5px;
+			height: 100px;
+			text-align: center;
+			color: white;
+			line-height: 100px;
+			font-size: 20px;
+		}
+	</style>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+    <style>
+        .top-panel {
+            border: 1px solid #eceff9;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .top-panel > .layui-card-body{
+            height: 60px;
+        }
+        .top-panel-number{
+            line-height:60px;
+            font-size: 30px;
+            border-right:1px solid #eceff9;
+        }
+        .top-panel-tips{
+            line-height:30px;
+            font-size: 12px
+        }
+        /* 新增：公告模块基础样式，确保与layui风格统一 */
+        .layuimini-notice {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+        .layuimini-notice:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .layuimini-notice-title {
+            cursor: pointer;
+            color: #333;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .layuimini-notice-extra {
+            font-size: 12px;
+            color: #999;
+        }
+        /* 新增：确保卡片高度与原有图表区域匹配，避免布局失衡 */
+        .notice-card, .version-card {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        .notice-card .layui-card-body, .version-card .layui-card-body {
+            flex: 1;
+            overflow-y: auto; /* 内容超出时可滚动，避免高度溢出 */
+        }
+    </style>
+</head>
+<body>
+<div class="layuimini-main">
+    <!-- 原有：顶部4个功能按钮行（无修改） -->
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-xs12 layui-col-md3">
+            <div class="layui-card top-panel">
+                <div class="QA" class="layui-card-header">新增患者</div>
+            </div>
+        </div>
+        <div class="layui-col-xs12 layui-col-md3">
+            <div class="layui-card top-panel">
+                <div class="QA" class="layui-card-header">快速创建病例</div>
+            </div>
+        </div>
+        <div class="layui-col-xs12 layui-col-md3">
+            <div class="layui-card top-panel">
+                <div class="QA" class="layui-card-header">检查检验申请</div>
+            </div>
+        </div>
+        <div class="layui-col-xs12 layui-col-md3">
+            <div class="layui-card top-panel">
+                <div class="QA" class="layui-card-header">医护人员信息</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 原有：报表图+玫瑰图行（无修改） -->
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-xs12 layui-col-md9">
+            <div id="echarts-records" style="background-color:#ffffff;min-height:400px;padding: 10px"></div>
+        </div>
+        <div class="layui-col-xs12 layui-col-md3">
+            <div id="echarts-pies" style="background-color:#ffffff;min-height:400px;padding: 10px"></div>
+        </div>
+    </div>
+
+    <!-- 关键修改：将原“echarts-dataset”和“echarts-map”区域替换为横向并列的“系统公告”和“版本信息” -->
+    <div class="layui-row layui-col-space15">
+        <!-- 左侧列：系统公告（替换原echarts-dataset） -->
+        <div class="layui-col-xs12 layui-col-md6">
+            <div class="layui-card notice-card" style="background-color:#ffffff;padding: 0;">
+                <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
+                <div class="layui-card-body layui-text" style="padding: 15px;">
+                    <div class="layuimini-notice">
+                        <div class="layuimini-notice-title">修改选项卡样式</div>
+                        <div class="layuimini-notice-extra">2019-07-11 23:06</div>
+                        <div class="layuimini-notice-content layui-hide">
+                            界面足够简洁清爽。<br>
+                            一个接口几行代码而已直接初始化整个框架，无需复杂操作。<br>
+                        </div>
+                    </div>
+                    <div class="layuimini-notice">
+                        <div class="layuimini-notice-title">新增系统404模板</div>
+                        <div class="layuimini-notice-extra">2019-07-11 12:57</div>
+                        <div class="layuimini-notice-content layui-hide">
+                            界面足够简洁清爽。<br>
+                            一个接口几行代码而已直接初始化整个框架，无需复杂操作。<br>
+                        </div>
+                    </div>
+                    <div class="layuimini-notice">
+                        <div class="layuimini-notice-title">新增treetable插件和菜单管理样式</div>
+                        <div class="layuimini-notice-extra">2019-07-05 14:28</div>
+                        <div class="layuimini-notice-content layui-hide">
+                            界面足够简洁清爽。<br>
+                            一个接口几行代码而已直接初始化整个框架，无需复杂操作。<br>
+                        </div>
+                    </div>
+                    <div class="layuimini-notice">
+                        <div class="layuimini-notice-title">修改logo缩放问题</div>
+                        <div class="layuimini-notice-extra">2019-07-04 11:02</div>
+                        <div class="layuimini-notice-content layui-hide">
+                            界面足够简洁清爽。<br>
+                            一个接口几行代码而已直接初始化整个框架，无需复杂操作。<br>
+                        </div>
+                    </div>
+                    <div class="layuimini-notice">
+                        <div class="layuimini-notice-title">修复左侧菜单缩放tab无法移动</div>
+                        <div class="layuimini-notice-extra">2019-06-17 11:55</div>
+                        <div class="layuimini-notice-content layui-hide">
+                            界面足够简洁清爽。<br>
+                            一个接口几行代码而已直接初始化整个框架，无需复杂操作。<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧列：版本信息（替换原echarts-map） -->
+        <div class="layuimini-col-xs12 layui-col-md6">
+            <div class="layui-card version-card" style="background-color:#ffffff;padding: 0;">
+                <div class="layui-card-header"><i class="fa fa-fire icon"></i>版本信息</div>
+                <div class="layui-card-body layui-text" style="padding: 15px;">
+                    <table class="layui-table" style="margin: 0;">
+                        <colgroup>
+                            <col width="100">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>框架名称</td>
+                            <td>layuimini</td>
+                        </tr>
+                        <tr>
+                            <td>当前版本</td>
+                            <td>v2.0.0</td>
+                        </tr>
+                        <tr>
+                            <td>主要特色</td>
+                            <td>零门槛 / 响应式 / 清爽 / 极简</td>
+                        </tr>
+                        <tr>
+                            <td>演示地址</td>
+                            <td>
+                                iframe版-v2：<a href="http://layuimini.99php.cn/iframe/v2/index.html" target="_blank">点击查看</a><br>
+                                单页版-v2：<a href="http://layuimini.99php.cn/onepage/v2/index.html" target="_blank">点击查看</a><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>下载地址</td>
+                            <td>
+                                iframe版-v2：<a href="https://github.com/zhongshaofa/layuimini/tree/v2" target="_blank">github</a> / <a href="https://gitee.com/zhongshaofa/layuimini/tree/v2" target="_blank">gitee</a><br>
+                                单页版-v2：<a href="https://github.com/zhongshaofa/layuimini/tree/v2-onepage" target="_blank">github</a> / <a href="https://gitee.com/zhongshaofa/layuimini/tree/v2-onepage" target="_blank">gitee</a><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gitee</td>
+                            <td style="padding-bottom: 0;">
+                                <div class="layui-btn-container">
+                                    <a href="https://gitee.com/zhongshaofa/layuimini" target="_blank" style="margin-right: 15px"><img src="https://gitee.com/zhongshaofa/layuimini/badge/star.svg?theme=dark" alt="star"></a>
+                                    <a href="https://gitee.com/zhongshaofa/layuimini" target="_blank"><img src="https://gitee.com/zhongshaofa/layuimini/badge/fork.svg?theme=dark" alt="fork"></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Github</td>
+                            <td style="padding-bottom: 0;">
+                                <div class="layui-btn-container">
+                                    <iframe src="https://ghbtns.com/github-btn.html?user=zhongshaofa&repo=layuimini&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                                    <iframe src="https://ghbtns.com/github-btn.html?user=zhongshaofa&repo=layuimini&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 原有：脚本引入（删除原图表初始化代码，补充公告交互） -->
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script>
+    layui.use(['layer', 'echarts', 'jquery'], function () {
+        var $ = layui.jquery,
+            layer = layui.layer,
+            echarts = layui.echarts;
+
+        /**
+         * 原有：每日病例报表图（无修改）
+         */
+        var echartsRecords = echarts.init(document.getElementById('echarts-records'), 'walden');
+        var optionRecords = {
+            title: {
+                text: '每日病例情况-报表图'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: ['新入院病例数', '当日诊断完成病例数', '开具检查检验病例数', '出院病例数']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '新入院病例数',
+                    type: 'line',
+                    stack: '总量',
+                    areaStyle: {},
+                    data: [120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name: '当日诊断完成病例数',
+                    type: 'line',
+					stack: '总量',
+                    areaStyle: {},
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name: '开具检查检验病例数',
+                    type: 'line',
+                    stack: '总量',
+                    areaStyle: {},
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name: '出院病例数',
+                    type: 'line',
+                    stack: '总量',
+					label: {
+					    normal: {
+					        show: true,
+					        position: 'top'
+					    }
+					},
+                    areaStyle: {},
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                },
+            ]
+        };
+        echartsRecords.setOption(optionRecords);
+
+        /**
+         * 原有：病例病因玫瑰图（无修改）
+         */
+        var echartsPies = echarts.init(document.getElementById('echarts-pies'), 'walden');
+        var optionPies = {
+            title: {
+                text: '病例病因类型-玫瑰图',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['呼吸系统疾病', '消化系统疾病', '心血管疾病', '外伤', '神经系统疾病', '其他']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    roseType: 'radius',
+                    data: [
+                        {value: 235, name: '呼吸系统疾病'},
+                        {value: 210, name: '消化系统疾病'},
+                        {value: 234, name: '心血管疾病'},
+                        {value: 135, name: '外伤'},
+                        {value: 268, name: '神经系统疾病'},
+						{value: 268, name: '其他'}
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        echartsPies.setOption(optionPies);
+
+        /**
+         * 原有：窗口缩放自适应（无修改）
+         */
+        window.onresize = function () {
+            echartsRecords.resize();
+            echartsPies.resize();
+        }
+
+        /**
+         * 新增：公告标题点击展开/折叠功能
+         */
+        $('.layuimini-notice-title').on('click', function() {
+            var $content = $(this).siblings('.layuimini-notice-content');
+            $content.toggleClass('layui-hide'); // 切换内容显示/隐藏
+        });
+    });
+</script>
+</body>
+</html>
