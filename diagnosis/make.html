@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+	<style>
+		.title{
+			color: darkblue;
+		}
+	</style>
+	<style>
+		.required::before {
+			/* 星号内容 */
+			content: "*";
+				/* 红色 */
+			color: #ff0000;
+			/* 与文字保持一点距离 */
+			margin-right: 4px;
+		/* 星号加粗 */
+			font-weight: bold;	
+		}
+	</style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>制定治疗方案</legend>
+        </fieldset>
+		
+        <form class="layui-form layui-form-pane" action="">
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">患者姓名</label>
+			        <div class="layui-input-block">
+                        <input type="text" name="patientname" lay-verify="required" lay-reqtext="患者姓名不能为空" placeholder="请输入患者姓名" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">病历号</label>
+			        <div class="layui-input-inline">
+			            <input type="text" name="MRN" lay-verify="required" lay-reqtext="病历号不能为空" placeholder="请输入病历号" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+				<div class="layui-inline">
+				    <label class="layui-form-label required">制定时间</label>
+				    <div class="layui-input-block">
+				        <input type="text" name="date" lay-verify="date" lay-reqtext="制定时间不能为空" id="date1" autocomplete="off" class="layui-input">
+				    </div>
+				</div>
+			</div>
+			
+			<hr>
+			<h3 class="title">用药方案</h3>
+			<hr>
+
+			<div class="layui-form-item">
+			    <label class="layui-form-label required">药品名称</label>
+			    <div class="layui-input-block">
+			        <input type="text" name="med" lay-verify="required" lay-reqtext="药品名称不能为空" autocomplete="off" placeholder="请输入药品名称" class="layui-input">
+			    </div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">药品剂量</label>
+			        <div class="layui-input-inline">
+			            <input type="text" name="medl" lay-verify="required" lay-reqtext="药品剂量不能为空" placeholder="请输入药品剂量(mg/ml)" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			    
+			    <label class="layui-form-label required">使用方法</label>
+			    <div class="layui-input-inline">
+			        <select name="method" lay-verify="required" lay-reqtext="使用方法不能为空">
+			            <option value="">请选择使用方法</option>
+			            <option value="口服" selected="">口服</option>
+			            <option value="静脉注射">静脉注射</option>
+			        </select>
+			    </div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required required">用药频次</label>
+			        <div class="layui-input-block">
+			            <input type="text" name="frequency" lay-verify="required" lay-reqtext="用药频次不能为空" placeholder="请输入用药频次(次/天)" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">用药时长</label>
+			        <div class="layui-input-inline">
+			            <input type="text" name="day" lay-verify="required" reqtext="用药时长不能为空" placeholder="请输入用药时间(天)" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			</div>
+			<hr>
+			<h3 class="title">手术方案</h3>
+			<hr>
+			<div class="layui-form-item">
+			    <label class="layui-form-label required">手术名称</label>
+			    <div class="layui-input-block">
+			        <input type="text" name="med" lay-verify="required" reqtext="手术名称不能为空" autocomplete="off" placeholder="请输入药品名称" class="layui-input">
+			    </div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">主刀医生</label>
+			        <div class="layui-input-block">
+			            <input type="text" name="doctorname" lay-verify="required" reqtext="医生姓名不能为空" placeholder="请输入医生姓名" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">手术时间</label>
+			            <div class="layui-input-block">
+			                <input type="text" name="date" lay-verify="date" lay-reqtext="制定时间不能为空" id="date2" autocomplete="off" class="layui-input">
+			            </div>
+			    </div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">预计手术时长</label>
+			        <div class="layui-input-block">
+			            <input type="text" name="timing" lay-verify="required" reqtext="预计手术时长不能为空" placeholder="请输入预计手术时长" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">麻醉方式</label>
+			        <div class="layui-input-inline">
+			            <input type="text" name="way" lay-verify="required" reqtext="麻醉方式不能为空" placeholder="请输入麻醉方式)" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			</div>
+			
+			<div class="layui-form-item layui-form-text">
+			    <label class="layui-form-label required">术前准备要求</label>
+			    <div class="layui-input-block">
+			        <textarea placeholder="请输入内容" lay-verify="required" reqtext="术前准备要求不能为空" class="layui-textarea"></textarea>
+			    </div>
+			</div>
+			
+			<div class="layui-form-item layui-form-text">
+			    <label class="layui-form-label required">手术团队成员</label>
+			    <div class="layui-input-block">
+			        <textarea placeholder="请输入成员名称" lay-verify="required" reqtext="手术团队成员不能为空" class="layui-textarea"></textarea>
+			    </div>
+			</div>
+			<hr>
+			<h3 class="title">康复方案</h3>
+			<hr>
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">训练频次</label>
+			        <div class="layui-input-block">
+			            <input type="text" name="frequency-2" lay-verify="required" reqtext="训练频次不能为空" placeholder="请输入训练频次(次/天)" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">训练周期</label>
+			        <div class="layui-input-inline">
+			            <input type="text" name="T" lay-verify="required" reqtext="训练周期不能为空" placeholder="请输入训练周期" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+			</div>
+			
+			<div class="layui-form-item layui-form-text">
+			    <label class="layui-form-label required">训练内容</label>
+			    <div class="layui-input-block">
+			        <textarea placeholder="请输入训练内容" lay-verify="required" reqtext="训练内容不能为空" class="layui-textarea"></textarea>
+			    </div>
+			</div>
+			
+			<div class="layui-form-item layui-form-text">
+			    <label class="layui-form-label required">注意事项</label>
+			    <div class="layui-input-block">
+			        <textarea placeholder="请输入注意事项" lay-verify="required" reqtext="注意事项不能为空" class="layui-textarea"></textarea>
+			    </div>
+			</div>
+			<hr>
+			<div class="layui-form-item layui-form-text">
+			    <label class="layui-form-label">备注</label>
+			    <div class="layui-input-block">
+			        <textarea placeholder="请输入补充说明" class="layui-textarea"></textarea>
+			    </div>
+			</div>
+            <div class="layui-form-item">
+                <button class="layui-btn" lay-submit="" lay-filter="demo2">保存方案</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+		laydate.render({
+		    elem: '#date2'
+		});
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+    });
+</script>
+
+</body>
+</html>
