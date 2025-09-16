@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+	<style>
+		.required::before {
+			/* 星号内容 */
+			content: "*";
+				/* 红色 */
+			color: #ff0000;
+			/* 与文字保持一点距离 */
+			margin-right: 4px;
+		/* 星号加粗 */
+			font-weight: bold;	
+		}
+		#title{
+			color: darkblue;
+		}
+	</style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>新增医护人员信息</legend>
+        </fieldset>
+		<h3 id="title">职业信息</h3>
+		<hr>
+        <form class="layui-form" action="">
+			
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">所属科室</label>
+			        <div class="layui-input-inline">
+			            <select name="department" lay-verify="required" lay-reqtext="申请科室不能为空" lay-search="">
+							<option value="">直接选择或搜索选择</option>
+							<option value="1">内科</option>
+							<option value="2">外科</option>
+							<option value="3">儿科</option>
+							<option value="4">妇产科</option>
+							<option value="5">检验科</option>
+							<option value="6">放射科</option>
+							<option value="7">超声科</option>
+			            </select>
+			        </div>
+			    </div>
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">职称</label>
+			        <div class="layui-input-inline">
+			            <select name="modules" lay-verify="required" lay-reqtext="职称不能为空" lay-search="">
+							<option value="">直接选择或搜索选择</option>
+			                <option value="1">主任医师</option>
+			                <option value="2">主治医师</option>
+			                <option value="3">护士</option>
+			            </select>
+			        </div>
+			    </div>
+				<div class="layui-inline">
+				    <label class="layui-form-label required">岗位类型</label>
+				    <div class="layui-input-inline">
+				        <select name="modules" lay-verify="required" lay-reqtext="岗位类型不能为空" lay-search="">
+							<option value="">直接选择或搜索选择</option>
+				            <option value="1">医生</option>
+				            <option value="2">护士</option>
+				            <option value="3">技师</option>
+							<option value="4">行政</option>
+				        </select>
+				    </div>
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">工号</label>
+			        <div class="layui-input-block">
+			            <input type="text" name="ID" lay-verify="required" lay-reqtext="工号不能为空" placeholder="请输入医护人员工号" autocomplete="off" class="layui-input">
+			        </div>
+			    </div>
+				<div class="layui-inline">
+				    <label class="layui-form-label required">入职日期</label>
+				    <div class="layui-input-inline">
+				        <input type="text" name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+				    </div>
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <label class="layui-form-label required">在职状态</label>
+			    <div class="layui-input-block">
+			        <input type="radio" name="work" value="在职" title="在职" checked="">
+			        <input type="radio" name="work" value="休假" title="休假">
+					<input type="radio" name="work" value="离职" title="离职">
+			    </div>
+			</div>
+			
+			<div class="layui-form-item">
+			    <div class="layui-inline">
+			        <label class="layui-form-label required">最高学历</label>
+			        <div class="layui-input-inline">
+			            <select name="edu" lay-verify="required" lay-search="">
+			                <option value="">直接选择或搜索选择</option>
+			                <option value="1">研究生</option>
+			                <option value="2">大学本科</option>
+			                <option value="3">大学专科</option>
+			                <option value="4">其他</option>
+			            </select>
+			        </div>
+			    </div>
+				<div class="layui-inline">
+				    <label class="layui-form-label required">毕业院校</label>
+				    <div class="layui-input-block">
+				        <input type="text" name="university" lay-verify="required" lay-reqtext="毕业院校不能为空" placeholder="请输入毕业院校" autocomplete="off" class="layui-input">
+				    </div>
+				</div>
+				<div class="layui-inline">
+				    <label class="layui-form-label required">专业</label>
+				    <div class="layui-input-block">
+				        <input type="text" name="major" lay-verify="required" lay-reqtext="专业不能为空" placeholder="请输入所修专业" autocomplete="off" class="layui-input">
+				    </div>
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<div class="layui-inline">
+				    <label class="layui-form-label required">执业证书编号</label>
+				    <div class="layui-input-block">
+				        <input type="text" name="number" lay-verify="required" lay-reqtext="编号不能为空" placeholder="请输入执业证书编号" autocomplete="off" class="layui-input">
+				    </div>
+				</div>
+				<div class="layui-inline">
+				    <label class="layui-form-label required">获取日期</label>
+				    <div class="layui-input-inline">
+				        <input type="text" name="date1" id="date1" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+				    </div>
+				</div>
+			</div>
+            
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入补充说明" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <!--<div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">编辑器</label>
+              <div class="layui-input-block">
+                <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+              </div>
+            </div>-->
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="demo1">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+	</div>
+</div>
+
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function (value) {
+                if (value.length < 5) {
+                    return '标题至少得5个字符啊';
+                }
+            }
+            , pass: [
+                /^[\S]{6,12}$/
+                , '密码必须6到12位，且不能出现空格'
+            ]
+            , content: function (value) {
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function (data) {
+            layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+        //表单初始赋值
+        form.val('example', {
+            "username": "贤心" // "name": "value"
+            , "password": "123456"
+            , "interest": 1
+            , "like[write]": true //复选框选中状态
+            , "close": true //开关状态
+            , "sex": "女"
+            , "desc": "我爱 layui"
+        })
+
+
+    });
+</script>
+
+</body>
+</html>

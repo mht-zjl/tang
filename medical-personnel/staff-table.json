@@ -1,0 +1,107 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": "YG23001",
+      "staffname": "张敏",
+      "sex": "女",
+	  "birthday": "1985-03-12",
+	  "age": "39",
+      "phone": "13812345678",
+      "email": "zhangmin@hospital.com",
+	  "department":"内科"
+    },
+    {
+      "id": "YG23002",
+      "staffname": "李强",
+      "sex": "男",
+      "birthday": "1990-07-25",
+      "age": "34",
+      "phone": "13987654321",
+      "email": "liqiang@hospital.com",
+      "department":"外科"
+    },
+    {
+      "id": "YG23003",
+      "staffname": "王芳",
+      "sex": "女",
+      "birthday": "1988-11-05",
+      "age": "36",
+      "phone": "13723456789",
+      "email": "wangfang@hospital.com",
+      "department":"儿科"
+    },
+    {
+      "id": "YG23004",
+      "staffname": "赵伟",
+      "sex": "男",
+      "birthday": "1992-02-18",
+      "age": "32",
+      "phone": "13698765432",
+      "email": "zhaowei@hospital.com",
+      "department":"急诊科"
+    },
+	{
+	  "id": "YG23005",
+	  "staffname": "陈静",
+	  "sex": "女",
+	  "birthday": "1982-09-30",
+	  "age": "42",
+	  "phone": "13512349876",
+	  "email": "chenjing@hospital.com",
+	  "department":"妇产科"
+	},
+	{
+	  "id": "YG23006",
+	  "staffname": "刘阳",
+	  "sex": "男",
+	  "birthday": "1989-05-14",
+	  "age": "35",
+	  "phone": "13487651234",
+	  "email": "liuyang@hospital.com",
+	  "department":"骨科"
+	},
+	{
+	  "id": "YG23007",
+	  "staffname": "黄丽",
+	  "sex": "女",
+	  "birthday": "1991-08-22",
+	  "age": "33",
+	  "phone": "13323458765",
+	  "email": "huangli@hospital.com",
+	  "department":"神经内科"
+	},
+	{
+	  "id": "YG23008",
+	  "staffname": "周明",
+	  "sex": "男",
+	  "birthday": "1986-04-08",
+	  "age": "38",
+	  "phone": "13298763456",
+	  "email": "zhouming@hospital.com",
+	  "department":"心血管内科"
+	},
+	{
+	  "id": "YG23009",
+	  "staffname": "吴婷",
+	  "sex": "女",
+	  "birthday": "1993-01-15",
+	  "age": "31",
+	  "phone": "13112346789",
+	  "email": "wuting@hospital.com",
+	  "department":"眼科"
+	},
+	{
+	  "id": "YG23010",
+	  "staffname": "郑凯",
+	  "sex": "男",
+	  "birthday": "1984-06-28",
+	  "age": "40",
+	  "phone": "13087652345",
+	  "email": "zhengkai@hospital.com",
+	  "department":"口腔科"
+	}
+  ]
+}
