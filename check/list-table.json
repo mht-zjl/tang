@@ -1,0 +1,89 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 10000,
+      "patientname": "刘芳",
+      "sex": "女",
+	  "age": "18",
+      "project": "血常规检查",
+      "department": "内科",
+      "date": "2025-09-01"
+    },
+    {
+      "id": 10001,
+      "patientname": "孙七",
+      "sex": "男",
+      "age": "32",
+      "project": "CT检查",
+      "department": "放射科",
+      "date": "2025-09-01"
+    },
+    {
+      "id": 10002,
+      "patientname": "周八",
+      "sex": "男",
+      "age": "55",
+      "project": "心电图",
+      "department": "心内科",
+      "date": "2025-09-03"
+    },
+    {
+      "id": 10003,
+     "patientname": "吴九",
+     "sex": "女",
+     "age": "35",
+     "project": "血糖监测",
+     "department": "内分泌科",
+     "date": "2025-09-04"
+    },
+    {
+      "id": 10004,
+      "patientname": "张庆",
+      "sex": "男",
+      "age": "40",
+      "project": "胸部X光",
+      "department": "放射科",
+      "date": "2025-09-04"
+    },
+    {
+      "id": 10005,
+      "patientname": "钱十一",
+      "sex": "女",
+      "age": "12",
+      "city":"山东省青岛市",
+      "project": "胃镜检查",
+      "department": "消化科",
+      "date": "2025-09-05"
+    },
+    {
+      "id": 10006,
+      "patientname": "冯十二",
+      "sex": "男",
+      "age": "48",
+      "project": "核磁共振",
+      "department": "神经科",
+      "date": "2025-09-05"
+    },
+    {
+      "id": 10007,
+      "patientname": "梁亮",
+      "sex": "男",
+      "age": "25",
+      "project": "尿常规检查",
+      "department": "内科",
+      "date": "2025-09-06"
+    },
+	{
+	 "id": 10008,
+	 "patientname": "魏薇薇",
+	 "sex": "女",
+	 "age": "28",
+      "project": "B超检查",
+      "department": "超声科",
+      "date": "2025-09-07"
+	}
+  ]
+}
