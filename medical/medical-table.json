@@ -1,0 +1,107 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "SN": 10000,
+      "medicalname": "阿莫西林胶囊",
+      "spec": "0.25g*24粒",
+	  "dosage form": "胶囊型",
+      "expiration date": "2026-09-14",
+      "stock quantity": 100,
+      "retail price": "18.5元",
+      "purchase price": "12.3元"
+    },
+    {
+      "SN": 10001,
+      "medicalname": "布洛芬片",
+      "spec": "0.2g*20片",
+      "dosage form": "片剂",
+      "expiration date": "2026-11-30",
+      "stock quantity": 80,
+      "retail price": "15.8元",
+      "purchase price": "10.2元"
+    },
+    {
+      "SN": 10002,
+      "medicalname": "头孢克肟分散片",
+      "spec": "0.1g*12片",
+      "dosage form": "片剂",
+      "expiration date": "2026-08-20",
+      "stock quantity": 60,
+      "retail price": "28.6元",
+      "purchase price": "20.5元"
+    },
+    {
+      "SN": 10003,
+      "medicalname": "盐酸左氧氟沙星胶囊",
+      "spec": "0.1g*10粒",
+      "dosage form": "胶囊剂",
+      "expiration date": "2026-07-15",
+      "stock quantity": 90,
+      "retail price": "22.3元",
+      "purchase price": "16.8元"
+    },
+    {
+      "SN": 10004,
+	  "medicalname": "对乙酰氨基酚片",
+      "spec": "0.5g*12片",
+      "dosage form": "片剂",
+      "expiration date": "2026-10-25",
+      "stock quantity": 120,
+      "retail price": "10.5元",
+      "purchase price": "7.2元"
+    },
+    {
+      "SN": 10005,
+  	  "medicalname": "阿奇霉素干混悬剂",
+      "spec": "0.1g*6袋",
+      "dosage form": "混悬剂",
+      "expiration date": "2026-06-30",
+      "stock quantity": 70,
+      "retail price": "35.6元",
+      "purchase price": "28.3元"
+    },
+    {
+      "SN": 10006,
+      "medicalname": "维生素 C 片",
+      "spec": "0.1g*60 片",
+      "dosage form": "片剂",
+      "expiration date": "2027-02-10",
+      "stock quantity": 150,
+      "retail price": "12.8元",
+      "purchase price": "8.5元"
+    },
+    {
+      "SN": 10007,
+      "medicalname": "复方氨酚烷胺胶囊",
+      "spec": "10 粒 / 盒",
+      "dosage form": "混悬剂",
+      "expiration date": "2026-12-18",
+      "stock quantity": 85,
+      "retail price": "16.2元",
+      "purchase price": "11.3元"
+    },
+    {
+      "SN": 10008,
+      "medicalname": "甲钴胺片",
+      "spec": "0.5mg*20 片",
+      "dosage form": "片剂",
+      "expiration date": "2026-09-05",
+      "stock quantity": 50,
+      "retail price": "32.5元",
+      "purchase price": "25.8元"
+    },
+    {
+      "SN": 10009,
+      "medicalname": "葡萄糖酸钙口服溶液",
+      "spec": "10ml*12 支",
+      "dosage form": "口服溶液剂",
+      "expiration date": "2026-11-08",
+      "stock quantity": 110,
+      "retail price": "20.3元",
+      "purchase price": "15.2元"
+    }
+  ]
+}
